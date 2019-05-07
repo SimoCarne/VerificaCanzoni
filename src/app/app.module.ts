@@ -9,11 +9,13 @@ FormsModule,
   ReactiveFormsModule
  } from '@angular/forms';
 import { ListaPrenComponent } from './lista-pren/lista-pren.component';
+import { DettagliComponent } from './dettagli/dettagli.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaPrenComponent
+    ListaPrenComponent,
+    DettagliComponent
   ],
   imports: [
     BrowserModule,
