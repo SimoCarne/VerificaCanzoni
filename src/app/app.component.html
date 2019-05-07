@@ -16,6 +16,8 @@
 
   </form>
 
+  <app-lista-pren [song]='songList'></app-lista-pren>
+
 
   {{selectedRoom | json}}
 
@@ -23,8 +25,8 @@
    <li *ngFor="let song of songList">
     {{song.album.title}} : {{song | json}}
    </li>
- </ul> 
- 
+ </ul>
+
 
  {{songList | json}}
 

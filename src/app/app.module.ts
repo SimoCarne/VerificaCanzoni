@@ -8,10 +8,12 @@ import {
 FormsModule,
   ReactiveFormsModule
  } from '@angular/forms';
+import { ListaPrenComponent } from './lista-pren/lista-pren.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaPrenComponent
   ],
   imports: [
     BrowserModule,

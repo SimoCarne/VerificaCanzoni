@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AlbumList } from './albumList.model';
 import { Album } from './album.model';
 import { Song } from './song.model';
+import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -11,14 +13,25 @@ import { Song } from './song.model';
 })
 
 export class AppComponent {
-  
+
   title = "Benvenuti al canzoniere";
   albums = AlbumList;
   selectedAlbum: Album = AlbumList[0];
+  ob: Observable<Song[]>;
   songList: Song[];
- 
 
-  constructor() { }
+
+  constructor(public http:HttpClient) {
+      this.metJSON();
+   }
+
+   metJSON(): void
+   {
+       this.ob = this.http.get<Song[]>('https://my-json-server.typicode.com/malizia-g/hotel/songlist');
+       this.ob.subscribe(data => {this.songList=data;});
+   }
+
+
   ngOnInit() {
     this.songList = new Array <Song>();
   }
